@@ -17,7 +17,7 @@ let timer = setInterval(() => {
         let input = prompt("Press s to stop: ");
         if(input === 's') {
             clearInterval(timer);
-            consolele.log("Countdown stopped by user!");
+            console.log("Countdown stopped by user!");
         }
     }, 0);
 }, 1000);
