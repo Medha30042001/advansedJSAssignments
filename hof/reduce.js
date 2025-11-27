@@ -10,3 +10,20 @@ let categoryCount = prodCategories.reduce((obj, category) => {
     return obj;
 }, {});
 console.log(categoryCount); 
+
+let sortedCategories = Object.entries(categoryCount)
+.sort((a, b) => b[1] -a[1])
+.map(entry => entry[0]);
+
+console.log(sortedCategories);
+
+
+/**
+    const sortedCategories = Object.entries(categoryCount)
+  .sort((a, b) => b[1] - a[1])  // sort by count
+  .map(entry => entry[0]);      // return only category names
+
+console.log(sortedCategories);
+// ["toys", "electronics", "clothing"]
+
+ */
