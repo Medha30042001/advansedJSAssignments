@@ -18,3 +18,9 @@ let studentData =   [
 
 let above60 = studentData.filter(n => n.marks>60);
 console.log(above60);
+
+let sortedArr = above60.sort((a, b) => b.marks - a.marks);
+console.log(sortedArr);
+
+let mapArr = sortedArr.map(n => n.name);
+console.log(mapArr);
