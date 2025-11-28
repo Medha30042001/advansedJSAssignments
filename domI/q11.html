@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="greeting">Hello</h1>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, quasi. Iste laudantium repellat facere numquam delectus nesciunt provident omnis repudiandae in sint accusantium, magnam illo similique, itaque commodi animi. Aspernatur?</p>
+    </div>
+    <div class="middle">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, molestiae? Esse mollitia nobis voluptatem, repellendus accusamus tempore sint sit rerum minima voluptas hic inventore reprehenderit veritatis illum. Accusantium, eos perferendis.</p>
+    </div>
+    <div class="container">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet distinctio repellendus ab molestiae sit! Quam quas ratione facere excepturi, eum aliquam. Eum harum expedita asperiores corrupti atque nihil quibusdam tempore!</p>
+    </div>
+
+</body>
+<script>
+    //1.
+    document.getElementById("greeting").textContent = "Welcome to the DOM World!";
+    //2.
+    let p = document.getElementsByTagName("p");
+    for(let n of p){
+        n.style.color = 'blue';
+    }
+    //3.
+    document.querySelector(".container").style.backgroundColor = 'yellow';
+</script>
+</html>
