@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <ul>
+        <li>Do assignment 
+            <button class="del">Delete</button>
+            <button class="comp">Completed</button>
+        </li>
+        <li>Exercise
+            <button class="del">Delete</button>
+            <button class="comp">Completed</button>
+        </li>
+        <li>Read a book
+            <button class="del">Delete</button>
+            <button class="comp">Completed</button>
+        </li>
+    </ul>
+    <input id="enterTask" placeholder="Enter new task">
+    <button id="addTask" onclick="addTask()">Add task</button>
+</body>
+<script>
+    let task = document.getElementById("enterTask");
+
+    document.getElementById("addTask").onclick = function addTask() {
+        let newLi = document.createElement('li');
+        let taskInput = task.value.trim();
+        newLi.innerHTML = `${taskInput}
+                            <button class="del">Delete</button>
+                            <button class="comp">Completed</button>`;
+        if(taskInput === '') return;
+
+        document.querySelector("ul").appendChild(newLi);
+        task.value = '';
+        task.focus();   
+        addButtonEvents(newLi);    
+    };
+
+    function addButtonEvents(newTask){ //newLi is newTask document.createElement('li')
+        newTask.querySelector('.del').onclick = function (){
+            newTask.remove();
+        }
+        newTask.querySelector('.comp').onclick = function(){
+            newTask.style.textDecoration = 'line-through';
+        }
+    };
+
+    document.querySelectorAll('ul li').forEach(n => addButtonEvents(n));
+
+    
+</script>
+</html>
