@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <br><br><input id="colorName" placeholder="Enter a color">
+    <br><br><input id="addText" placeholder="Enter text">
+
+    <br><br>
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium tempora perspiciatis alias officiis sunt inventore, illo obcaecati nisi, impedit sapiente placeat explicabo veritatis fugiat, iste numquam soluta consectetur sint? Eveniet.
+    </div>
+    <br><br>
+    <button id="bg" onclick="changeBg()">Change background</button>
+    <button id="txt" onclick="updateTxt()">Update Text</button>
+</body>
+<script>
+    let colorIt = document.getElementById("colorName");
+    let textIt = document.getElementById("addText");
+    
+    document.querySelector('#bg').onclick = function changeBg(){
+        let colorInput = colorIt.value.trim();
+        if(!CSS.supports('color', colorInput)){
+            alert('Invalid color name!');
+            return;
+        } 
+        document.querySelector('div').style.backgroundColor = colorInput;
+        colorIt.value = '';
+    }
+
+    document.querySelector('#txt').onclick = function updateTxt() {
+        let textInput = textIt.value.trim();
+        if(textInput === '') alert('Please enter some text!');
+        document.querySelector('div').textContent = textInput;
+        textIt.value = '';
+    }
+</script>
+</html>
