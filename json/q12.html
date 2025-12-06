@@ -12,6 +12,10 @@
     <div id="container"></div>
 </body>
 <script>
+    //when the add paragraph button is clicked
+    //we create a new node using createElement()
+    //then we give this new node text content
+    //we now append this new node to the existing div element
     document.getElementById("addPara").addEventListener("click", ()=>{
         let newPara = document.createElement("p");
         newPara.textContent = "This is a new paragraph";
@@ -20,6 +24,9 @@
         container.appendChild(newPara);
     });
 
+    //when we click the remove last paragraph button
+    //we first check if there is a last element in the div
+    //then we use removeChild() to remove the last element from div
     document.getElementById("remPara").addEventListener("click", ()=>{
         let container = document.getElementById("container");
 
