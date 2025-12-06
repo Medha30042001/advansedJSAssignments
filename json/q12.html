@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="addPara">Add Paragraph</button>
+    <button id="remPara">Remove Last Paraagraph</button>
+    <br>
+    <div id="container"></div>
+</body>
+<script>
+    document.getElementById("addPara").addEventListener("click", ()=>{
+        let newPara = document.createElement("p");
+        newPara.textContent = "This is a new paragraph";
+        let container = document.getElementById("container");
+
+        container.appendChild(newPara);
+    });
+
+    document.getElementById("remPara").addEventListener("click", ()=>{
+        let container = document.getElementById("container");
+
+        if(container.lastElementChild){
+            container.removeChild(container.lastElementChild);
+        }
+    });
+</script>
+</html>
