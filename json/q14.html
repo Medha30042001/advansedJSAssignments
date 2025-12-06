@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .task{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px;
+            border: 1px solid #ddd;
+            margin-top: 5px;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+         #container {
+            margin-top: 15px;
+        }
+        .deleteBtn{
+            background-color: rgb(248, 89, 89);
+        }
+    </style>
+</head>
+<body>
+    <h2>To do list</h2>
+    <input type="text" id = "taskInput" placeholder="Add task here">
+    <button id="addBtn">Add task</button>
+
+    <br><br>
+    <input type="text" id="searchInput" placeholder="Search Task">
+    <div id="container"></div>
+
+</body>
+<script>
+    const taskInput = document.getElementById("taskInput");
+    const searchInput = document.getElementById("searchInput");
+    const container = document.getElementById("container");
+
+    //in order to restore tasks when the page loads
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    //converting tasks string into array of objects
+    //if no tasks, then tasks = []
+
+    document.getElementById("addBtn").addEventListener("click", ()=>{
+        const text = taskInput.value.trim();
+
+        if(text === ""){
+            alert("Please enter task");
+            return;
+        }
+
+        const newTask = {
+            id : Date.now(),
+            text,
+            completed : false
+        };
+
+        tasks.push(newTask);
+        saveTasks();
+        renderTasks();
+
+        taskInput.value = "";
+
+    });
+
+    function saveTasks(){
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function renderTasks(){
+        container.innerHTML = "";
+
+        let searchText = searchInput.value.toLowerCase().trim() || "";
+
+        let searchResult = tasks.filter(item => item.text.toLowerCase().includes(searchText));
+        searchResult.forEach(item => {
+            let taskDiv = document.createElement("div");
+            taskDiv.className = "task";
+
+            let taskText = document.createElement("span");
+            taskText.textContent = item.text;
+
+            if(item.completed) taskText.classList.add("completed");
+
+            let completeBtn = document.createElement("button");
+            completeBtn.textContent = item.completed? "Undo" : "Done";
+
+            completeBtn.addEventListener("click", ()=>{
+                item.completed = !item.completed;
+                saveTasks();
+                renderTasks();
+            });
+
+            let deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+            deleteBtn.className = "deleteBtn";
+
+            deleteBtn.addEventListener("click", ()=>{
+                tasks = tasks.filter(t => t.id !== item.id);
+                saveTasks();
+                renderTasks();
+            });
+
+            taskDiv.append(taskText, completeBtn, deleteBtn);
+            container.appendChild(taskDiv);
+        });
+        
+        //task added? go to rendertasks()
+        //search input entered? go to rendertasks()
+        searchInput.addEventListener("input", renderTasks);
+    }
+</script>
+</html>
