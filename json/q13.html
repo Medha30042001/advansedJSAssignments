@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea id="notesInput" placeholder="Write here"></textarea>
+    <br><br>
+    <button id="saveBtn">Save Notes</button>
+    <button id="clearBtn">Clear Notes</button>
+
+    <p id="message"></p>
+</body>
+<script>
+    const notesInput = document.getElementById("notesInput");
+    const message = document.getElementById("message");
+
+    //when the page reloads, the previous notes 
+    //should automatically display in the text area
+    //if the previous notes exist
+    window.addEventListener("load", ()=>{
+        const savedNotes = localStorage.getItem("notes");
+
+        if(savedNotes){
+            notesInput.value = savedNotes;
+            message.textContent = "Notes loaded from previous session";
+        }
+    });
+
+    //when we click the save notes button
+    //the text gets stored into the local storage using setItem()
+    //if nothing is entered, the notes won't be saved
+    document.getElementById("saveBtn").addEventListener("click", ()=>{
+        const notes = notesInput.value.trim();
+
+        if(notes === ""){
+            message.textContent = "Cannot save empty notes!";
+            return;
+        }
+        
+        localStorage.setItem("notes", notes);
+        message.textContent = "Notes saved successfully!";
+    });
+
+    //when we click the clear notes button
+    //the notes from the previous session get cleared
+    //using the removeItem() method
+    document.getElementById("clearBtn").addEventListener("click", ()=>{
+        localStorage.removeItem("notes");
+        notesInput.value = "";
+        message.textContent = "Notes Cleared";
+    });
+</script>
+</html>
