@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todos App</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .todo { 
+      padding: 10px; margin: 10px 0; 
+      border: 1px solid #ccc; border-radius: 6px; 
+      display: flex; justify-content: space-between; 
+      align-items: center;
+    }
+    .completed { color: green; font-weight: bold; }
+    .buttons { display: flex; gap: 10px; }
+    button { padding: 6px 12px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  
+  <h1>Todos</h1>
+  <div id="todo-container"></div>
+
+  <script type="module" src="ui.js"></script>
+</body>
+</html>
