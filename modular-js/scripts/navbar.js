@@ -19,6 +19,7 @@ export function loadNavbar(){
     linkDiv.append(
         createLink("Home", "./index.html"),
         createLink("About", "./about.html"),
+        createLink("To-Do", "./todos.html"),
         createLink("Gallary", "./gallary.html"),
         createLink("Contacts", "./contacts.html")
     );

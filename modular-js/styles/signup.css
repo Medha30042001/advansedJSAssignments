@@ -5,12 +5,28 @@ body{
 
     align-items: center;
     justify-content: center;
-    background-color: rgb(241, 245, 244);
+    /* background-color: rgb(241, 245, 244); */
+    background: linear-gradient(to top right, #f9d5f2, #d6fef4);
+
     height: 100vh;
     color: rgb(58, 58, 59);
 
     font-family: monospace;
 
+}
+
+.goBack{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    padding: 20px;
+    /* border-right: 5px solid rgb(24, 84, 84); */
+}
+
+.bigWords{
+    text-align: right;
+    font-size: 80px;
 }
 
 h1{
@@ -38,34 +54,29 @@ h1{
     gap: 20px;
 }
 
-button{
-    border: none;
+
+#signupUserBtn, #goHomeBtn{
     padding: 10px 20px;
     cursor: pointer;
 
-    border: 2px solid rgb(29, 102, 180);
-    color: rgb(29, 102, 180);
     border-radius: 6px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     font-family: monospace;
-}
 
-button:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
-}
-
-#signupUserBtn{
     background-color: rgb(248, 237, 231);
     color: rgb(249, 118, 52);
     border: 2px solid rgb(249, 118, 52);
-
 }
 
-#signupUserBtn:hover{
+#signupUserBtn:hover, #goHomeBtn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
     background-color: rgb(249, 118, 52);
     color: white;
+    border: 2px solid rgb(249, 118, 52);
+    padding: 10px 20px;
+
 }
 
 input{
@@ -81,3 +92,4 @@ input{
 input:focus{
     outline: 2px solid rgb(29, 102, 180);
 }
+

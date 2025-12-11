@@ -4,7 +4,10 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(241, 245, 244);
+    height: 100vh;
+    background: linear-gradient(to top, #f8c2ed, #b8f7e7);
+
+    /* background-color: rgb(241, 245, 244); */
     color: rgb(58, 58, 59);
 
     font-family: monospace;
@@ -20,7 +23,7 @@ body{
 
 .homepage{
     padding: 70px 200px;
-    background-color: rgb(180, 237, 237);
+    background-color: rgb(205, 244, 244);
 
     display: flex;
     flex-direction: column;
@@ -55,7 +58,7 @@ button:hover{
 }
 
 #loginBtn{
-    background-color: rgb(233, 241, 249);
+    background-color: rgb(219, 233, 247);
     color: rgb(33, 105, 177);
     border: 2px solid rgb(33, 105, 177);
 }

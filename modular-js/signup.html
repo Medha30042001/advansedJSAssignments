@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/signup.css">
 </head>
 <body>
-    <div id="navbar"></div>
-    <h1>Register Here</h1>
-    <input type="email" id="emailR" placeholder="Enter your email" autocomplete="off">
-    <input type="password" id="passwordR" placeholder="Enter your password" autocomplete="new-password">
-    <button id="signupUserBtn">Sign up</button>
+    <div class="goBack">
+        <button id="goHomeBtn">◀ Go back home</button>
+        <p class="bigWords">Register as a user in the database</p>
+    </div>
+    <div class="signupDiv">
+        <h1>Register Here</h1>
+        <input type="email" id="emailR" placeholder="Enter your email" autocomplete="off">
+        <input type="password" id="passwordR" placeholder="Enter your password" autocomplete="new-password">
+        <button id="signupUserBtn">Sign up</button>
+    </div>
     <div id="footer"></div>
+
 </body>
 <script type="module" src="./scripts/layout.js"></script>
 <script type="module" src="./scripts/signup.js"></script>

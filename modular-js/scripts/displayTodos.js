@@ -21,16 +21,16 @@ export function renderTodos(todos){
         card.className = "card";
 
         let userId = document.createElement("p");
-        userId.textContent = `User ID : ${todo.userId}`;
+        userId.textContent = `User ID : ${todo.userId} |`;
 
         let id = document.createElement("p");
-        id.textContent = `Id : ${todo.id}`;
+        id.textContent = `Id : ${todo.id} |`;
 
         let title = document.createElement("h3");
         title.textContent = `Title : ${todo.title}`;
 
         let completed = document.createElement("p");
-        completed.textContent = `Completed : ${todo.completed}`;
+        completed.textContent = ` | Completed : ${todo.completed}`;
 
         card.append(userId, id, title, completed);
         container.appendChild(card);

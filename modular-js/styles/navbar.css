@@ -1,9 +1,11 @@
 #navbar{
-    background-color: black;
+    /* background-color: black; */
+    background: linear-gradient(to right, #f583de, #47f7cb);
+
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    padding: 0 20px;
+    padding: 0 0 0 20px;
 }
 
 .linkDiv{
@@ -14,30 +16,31 @@
 a{
     text-decoration: none;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(0, 0, 0);
+    font-family: monospace;
+    background-color: transparent;
     padding: 10px;
-
+    font-size: 18px;
     transition: all 0.3s ease;
 }
 
 a:hover{
     background-color: rgb(241, 245, 244);
-    color: black;
+    color: rgb(24, 84, 84);
 }
 
 button{
-    border: none;
-    border-radius: 10px;
-    border: 7px solid black;
+    border: none;    
     transition: all 0.3s ease;
-    background-color: rgb(232, 66, 66);
+    background-color: rgb(243, 52, 100);
     color: white;
-    padding: 0 10px;
+    padding: 0 25px;
+    font-family: monospace;
+
 }
 
 button:hover{
-    background-color: rgb(246, 77, 47);
-    border: 5px solid black;
-    padding: 0 15px;
+    background-color: rgb(246, 47, 166);
+    padding: 0 30px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
