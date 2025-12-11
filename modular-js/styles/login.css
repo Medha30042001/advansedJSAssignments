@@ -1,9 +1,10 @@
 
+
 body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(238, 238, 240);
+    background-color: rgb(255, 255, 255);
     height: 100vh;
     color: rgb(58, 58, 59);
 
@@ -11,19 +12,18 @@ body{
 
 }
 
-.homepage{
-    padding: 70px 200px;
-    background-color: white;
+.loginDiv{
+    padding: 70px;
+    background-color: rgb(226, 228, 187);
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
 
     border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
 }
 
 .buttonDiv{
@@ -34,6 +34,7 @@ body{
 button{
     border: none;
     padding: 10px 20px;
+    cursor: pointer;
 
     border-radius: 6px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -45,23 +46,25 @@ button:hover{
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
 }
 
-#loginBtn{
+#loginUserBtn{
     background-color: rgb(114, 180, 246);
     color: #202020;
 }
 
-#signupBtn{
-    background-color: rgb(247, 178, 74);
-    color: #202020;
-
-}
-
-#loginBtn:hover{
+#loginUserBtn:hover{
     background-color: rgb(33, 105, 177);
     color: white;
 }
 
-#signupBtn:hover{
-    background-color: rgb(249, 118, 52);
-    color: white;
+input{
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+input:focus{
+    outline: 2px solid rgb(114, 180, 246);
 }
