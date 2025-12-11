@@ -4,18 +4,24 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(241, 245, 244);
     height: 100vh;
     color: rgb(58, 58, 59);
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
 
+}
+
+h1{
+    color: rgb(24, 84, 84);
+    font-size: 40px;
 }
 
 .loginDiv{
     padding: 70px;
-    background-color: rgb(226, 228, 187);
+    background-color: rgb(180, 237, 237);
 
+    border: 2px solid rgb(49, 184, 194);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,9 +42,12 @@ button{
     padding: 10px 20px;
     cursor: pointer;
 
+    border: 2px solid rgb(29, 102, 180);
+    color: rgb(29, 102, 180);
     border-radius: 6px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    font-family: monospace;
 }
 
 button:hover{
@@ -47,12 +56,12 @@ button:hover{
 }
 
 #loginUserBtn{
-    background-color: rgb(114, 180, 246);
+    background-color: rgb(233, 241, 249);
     color: #202020;
 }
 
 #loginUserBtn:hover{
-    background-color: rgb(33, 105, 177);
+    background-color: rgb(29, 102, 180);
     color: white;
 }
 
@@ -62,9 +71,10 @@ input{
     border: none;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: monospace;
 
 }
 
 input:focus{
-    outline: 2px solid rgb(114, 180, 246);
+    outline: 2px solid rgb(29, 102, 180);
 }
